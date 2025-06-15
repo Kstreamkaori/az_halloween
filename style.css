@@ -40,7 +40,7 @@ button.play:hover {
 }
 
 button.nav {
-  background-color: #81D4FA;
+  background-color: #a78bfa;
   color: #333;
   border: none;
   border-radius: 8px;
@@ -50,7 +50,7 @@ button.nav {
 }
 
 button.nav:hover {
-  background-color: #4FC3F7;
+  background-color: #7c3aed;
 }
 
 
