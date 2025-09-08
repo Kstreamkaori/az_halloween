@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tanabata Story</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Let's Read!</h1>
+
+  <!-- 単語表示エリア -->
+  <div id="word-area">
+    <div id="word"></div>
+  </div>
+
+  <!-- イラスト表示エリア -->
+<div id="image-area">
+  <img id="image" src="" alt="illustration" style="visibility: hidden;" />
+</div>
+
+<!-- イラスト表示ボタン -->
+<div id="show-btn-area">
+  <button id="show-image-btn" onclick="showImage()" style="display:none;">Show image</button>
+</div>
+
+<!-- ナビゲーションボタン -->
+<div id="nav-buttons">
+  <button class="nav" onclick="prevWord()">← Prev</button>
+  <button class="nav" onclick="nextWord()">Next →</button>
+</div>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+ 
+  
+</body>
+</html>
