@@ -1,1 +1,96 @@
+/* ベースのスタイル */
+body {
+  font-family: 'Andika', sans-serif;
+  text-align: center;
+  background: #e0f7fa;         /* CUD風のやさしい水色 */
+  color: #333;
+  padding: 2em;
+}
 
+/* 単語表示エリア */
+#word-area {
+  font-size: 64pt;
+  margin: 20px 0 10px;
+  min-height: 90px;
+}
+
+/* イラストエリア */
+#image-area {
+  margin-top: 20px;
+}
+
+#image-area img {
+  width: 200px;
+  height: auto;
+  margin: 0 auto 10px;
+  display: block;
+  visibility: hidden;
+}
+
+/* ボタン共通 */
+button.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* 🔉 サウンドボタン */
+#sound-btn {
+  background-color: #b7e86b;
+  color: #000;
+  border: 2px solid #9acd32;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/* サウンドボタンのhover */
+#sound-btn:hover {
+  background-color: #a4dc4e;
+}
+
+/* サウンドボタンの配置 */
+#sound-btn-area {
+  text-align: center;
+  min-height: 70px;
+  margin: 30px 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📸イラストボタン */
+#show-image-btn {
+  visibility: hidden;
+  display: inline-block;
+  margin: 0 auto;
+  background-color: #f9d390;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ⬅️➡️ ナビゲーションボタンの配置 */
+#nav-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* ナビボタンの見た目 */
+button.nav {
+  background-color: #81D4FA;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
