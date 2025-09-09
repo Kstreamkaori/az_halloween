@@ -56,6 +56,30 @@ function nextWord() {
   showWord();
 }
 
+// ルビ付き表示用のチャンクを作る（語末優先で target を <ruby> に置換）
+function getDisplayChunks(wordData) {
+  // ルビ指定がなければ従来通り
+  if (!wordData.ruby) {
+    return wordData.chunks || wordData.word.split("");
+  }
+
+  const { target, text } = wordData.ruby;
+  const w = wordData.word;
+  const idx = w.lastIndexOf(target); // 語末に近い一致を優先
+
+  if (idx === -1) {
+    // 念のため見つからなければ従来通り
+    return wordData.chunks || w.split("");
+  }
+
+  const before = w.slice(0, idx);
+  const middle = `<ruby>${target}<rt>${text}</rt></ruby>`;
+  const after  = w.slice(idx + target.length);
+
+  // before/after は1文字ずつ、ruby は1塊で返す
+  return [...before.split(""), middle, ...after.split("")];
+}
+
 function typeWriter(wordData, callback) {
   const wordEl = document.getElementById("word");
   const chunks = wordData.chunks || wordData.word.split("");
