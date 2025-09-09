@@ -92,27 +92,24 @@ button.nav:hover {
 
 
 
-/* ルビの基本（Safari安定） */
-ruby.r { ruby-position: over; ruby-merge: separate;　display: ruby; }
+/* ==== Ruby（Safari/Chrome iOS安定）==== */
+ruby.r { ruby-position: over; ruby-merge: separate; }
 ruby.r rb { line-height: 1; }
+
+/* PC基準 */
 ruby.r rt {
-  display: ruby-text;
-  font-size: 0.55em;
+  font-size: 0.58em;
   color: #666;
   line-height: 1;
-  margin-top: -0.22em;  /* 近づけたい/離したい時は±調整 */
+  position: relative;
+  top: -0.32em;          /* PCの寄せ量 */
 }
 
-/* スマホは純粋な ruby レイアウトで寄せる */
+/* スマホ（Safari/Chrome共通） */
 @media (max-width: 768px) {
   ruby.r rt {
-    font-size: 0.70em;        /* 少し大きめ（好みで 0.66〜0.72） */
-    line-height: 1;
-    display: ruby-text;       /* ← ここが大事。inline-block は使わない */
-    position: relative;       /* ← top で上下だけ調整 */
-    top: -0.44em;             /* 距離。近すぎなら -0.40 / 遠いなら -0.48 */
-    margin: 0;
-    transform: none;
+    font-size: 0.68em;   /* 少し大きめに */
+    top: -0.44em;        /* 距離。遠ければ -0.48 / 近ければ -0.40 に */
   }
 }
-
+/* ===================================== */
