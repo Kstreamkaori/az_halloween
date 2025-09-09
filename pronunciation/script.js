@@ -82,7 +82,7 @@ function getDisplayChunks(wordData) {
 
 function typeWriter(wordData, callback) {
   const wordEl = document.getElementById("word");
-  const chunks = wordData.chunks || wordData.word.split("");
+    const chunks = getDisplayChunks(wordData);
   let i = 0;
 
   function type() {
