@@ -89,3 +89,11 @@ button.nav {
 button.nav:hover {
   background-color: #e69500;   /* 濃いオレンジに変化 */
 }
+
+/* ルビ（フリガナ）の見た目 */
+ruby rt {
+  font-size: 0.45em;
+  color: #666;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
