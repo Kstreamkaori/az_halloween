@@ -90,26 +90,7 @@ button.nav:hover {
   background-color: #e69500;   /* 濃いオレンジに変化 */
 }
 
-/* ルビ（フリガナ）の見た目・位置調整（PC基準） */
-ruby { ruby-position: over; }
-ruby rt {
-  font-size: 0.45em;
-  color: #666;
-  line-height: 1;
-  position: relative;
-  top: 0.18em;               /* 下へ寄せる */
-  letter-spacing: 0.02em;
-}
 
-/* スマホでさらに寄せる＆少し大きくする */
-@media (max-width: 768px) {
-  ruby rt {
-    font-size: 0.60em;       /* 少し大きく */
-    top: 0.34em;             /* さらに下へ寄せる */
-    display: inline-block;   /* iOSで位置指定を効かせる */
-    transform: translateY(0.08em);  /* 追い寄せ（好みで±調整） */
-  }
-}  /* ← この閉じカッコを忘れない！ */
 
 /* ルビの基本（Safari安定） */
 ruby.r { ruby-position: over; ruby-merge: separate; }
