@@ -77,19 +77,16 @@ button.btn {
   cursor: pointer;
 }
 
-/* ⬅️➡️ ナビゲーションボタンの配置 */
-#nav-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 20px;
-}
-
-/* ナビボタンの見た目 */
 button.nav {
-  background-color: #81D4FA;
-  color: #333;
+  background-color: #B0B0B0;   /* 標準のグレー */
+  color: #fff;                 /* 白文字にして視認性UP */
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.nav:hover {
+  background-color: #8c8c8c;   /* 濃いグレーに変化 */
+}
