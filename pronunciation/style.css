@@ -103,10 +103,14 @@ ruby.r rt {
   margin-top: -0.22em;  /* 近づけたい/離したい時は±調整 */
 }
 
-/* スマホで少し寄せる＆大きくする */
+/* スマホで寄せる（Safariでmarginが効かない対策） */
 @media (max-width: 768px) {
   ruby.r rt {
-    font-size: 0.65em;      /* そのままでOK */
-    margin-top: -0.52em;    /* ← -0.34em に変更（まずはここだけ） */
+    font-size: 0.68em;          /* ちょい大きめ */
+    line-height: 1;
+    display: inline-block;      /* transform を効かせる */
+    margin-top: 0;              /* 無視される可能性があるので 0 に */
+    transform: translateY(-0.40em); /* ← ここで距離を調整（上に寄せる） */
   }
 }
+
