@@ -87,9 +87,13 @@ function getDisplayChunks(wordData) {
       if (idx >= 0) marks[idx] = spec.text;
     });
 
-    return chars.map((ch, i) =>
-      marks[i] ? `<ruby>${ch}<rt>${marks[i]}</rt></ruby>` : ch
-    );
+    // ★ここだけ置き換え
+return chars.map((ch, i) =>
+  marks[i]
+    ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
+    : ch
+);
+
   }
 
   // ② まとめてルビ（ruby: {target, text}）にも対応（既存互換）
