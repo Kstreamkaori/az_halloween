@@ -93,10 +93,10 @@ button.nav:hover {
 
 
 /* ルビの基本（Safari安定） */
-ruby.r { ruby-position: over; ruby-merge: separate; }
+ruby.r { ruby-position: over; ruby-merge: separate;　display: ruby; }
 ruby.r rb { line-height: 1; }
 ruby.r rt {
-  display: block;
+  display: ruby-text;
   font-size: 0.55em;
   color: #666;
   line-height: 1;
