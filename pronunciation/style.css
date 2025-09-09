@@ -2,11 +2,10 @@
 body {
   font-family: 'Andika', sans-serif;
   text-align: center;
-  background: #FFE0B2;   /* ハロウィンに合う薄オレンジ */
+  background: #FFCC99;   /* 明るいソフトオレンジ */
   color: #333;
   padding: 2em;
 }
-
 /* 単語表示エリア */
 #word-area {
   font-size: 64pt;
