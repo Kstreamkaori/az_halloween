@@ -110,3 +110,22 @@ ruby rt {
     transform: translateY(0.08em);  /* 追い寄せ（好みで±調整） */
   }
 }  /* ← この閉じカッコを忘れない！ */
+
+/* ルビの基本（Safari安定） */
+ruby.r { ruby-position: over; ruby-merge: separate; }
+ruby.r rb { line-height: 1; }
+ruby.r rt {
+  display: block;
+  font-size: 0.55em;
+  color: #666;
+  line-height: 1;
+  margin-top: -0.22em;  /* 近づけたい/離したい時は±調整 */
+}
+
+/* スマホで少し寄せる＆大きくする */
+@media (max-width: 768px) {
+  ruby.r rt {
+    font-size: 0.65em;
+    margin-top: -0.28em; /* 近すぎ→-0.24 / 遠い→-0.32 など */
+  }
+}
