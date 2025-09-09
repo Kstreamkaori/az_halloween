@@ -17,7 +17,7 @@ const data = [
   { word: "passes", sound: "passes.mp3", chunks: ["p", "a", "ss", "e", "s"] },
   { word: "pot", sound: "pot.mp3" },
   { word: "runs", sound: "runs.mp3" },
-  { word: "sam", sound: "sam.mp3" },
+  { word: "Sam", sound: "sam.mp3" },
   { word: "up", sound: "up.mp3" },
   { word: "zap", sound: "zap.mp3" }
 ];
