@@ -12,11 +12,21 @@ const data = [
   { word: "from", sound: "from.mp3" }, 
   { word: "gets", sound: "gets.mp3" },
   { word: "got", sound: "got.mp3" }, 
-  { word: "has", sound: "has.mp3", ruby: { target: "s", text: "z" }  },
+  { word: "has", sound: "has.mp3", 
+   rubyChars: [
+    { char: "s", text: "z", which: "last"} // 最後の s の上に z
+  ]  },
   { word: "muffin", sound: "muffin.mp3", chunks: ["m", "u", "ff", "i", "n"] },
-  { word: "passes", sound: "passes.mp3", chunks: ["p", "a", "ss", "e", "s"], ruby: { target: "es", text: "iz" } },
+  { word: "passes", sound: "passes.mp3", chunks: ["p", "a", "ss", "e", "s"], 
+   rubyChars: [
+    { char: "e", text: "i" },              // e の上に i
+    { char: "s", text: "z", which: "last"} // 最後の s の上に z
+  ] },
   { word: "pot", sound: "pot.mp3" },
-  { word: "runs", sound: "runs.mp3", ruby: { target: "s", text: "z" }  },
+  { word: "runs", sound: "runs.mp3", 
+   rubyChars: [
+    { char: "s", text: "z", which: "last"} // 最後の s の上に z
+  ]  },
   { word: "Sam", sound: "sam.mp3" },
   { word: "up", sound: "up.mp3" },
   { word: "zap", sound: "zap.mp3" }
