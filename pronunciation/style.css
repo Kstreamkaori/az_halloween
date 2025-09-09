@@ -37,11 +37,10 @@ button.btn {
   transition: background-color 0.2s ease;
 }
 
-/* 🔉 サウンドボタン */
 #sound-btn {
-  background-color: #b7e86b;
-  color: #000;
-  border: 2px solid #9acd32;
+  background-color: #FFA500;   /* 明るいオレンジ */
+  color: #fff;                 /* 白文字で見やすく */
+  border: 2px solid #e69500;   /* 少し濃いオレンジで縁取り */
   border-radius: 8px;
   padding: 10px 20px;
   font-size: 16px;
@@ -49,10 +48,10 @@ button.btn {
   visibility: hidden;
 }
 
-/* サウンドボタンのhover */
 #sound-btn:hover {
-  background-color: #a4dc4e;
+  background-color: #e69500;   /* 濃いオレンジに変化 */
 }
+
 
 /* サウンドボタンの配置 */
 #sound-btn-area {
