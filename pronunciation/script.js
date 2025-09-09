@@ -66,29 +66,48 @@ function nextWord() {
   showWord();
 }
 
-// ルビ付き表示用のチャンクを作る（語末優先で target を <ruby> に置換）
+// ルビ付き表示用のチャンクを作る
 function getDisplayChunks(wordData) {
-  // ルビ指定がなければ従来通り
-  if (!wordData.ruby) {
-    return wordData.chunks || wordData.word.split("");
-  }
-
-  const { target, text } = wordData.ruby;
   const w = wordData.word;
-  const idx = w.lastIndexOf(target); // 語末に近い一致を優先
 
-  if (idx === -1) {
-    // 念のため見つからなければ従来通り
-    return wordData.chunks || w.split("");
+  // ① 文字ごとルビ（rubyChars）があれば優先
+  if (Array.isArray(wordData.rubyChars) && wordData.rubyChars.length) {
+    const chars = w.split("");
+    const marks = new Array(chars.length).fill(null);
+
+    wordData.rubyChars.forEach(spec => {
+      let idx = -1;
+      if (typeof spec.index === "number") {
+        idx = spec.index; // 0-based 位置指定
+      } else if (spec.which === "last") {
+        idx = chars.lastIndexOf(spec.char);
+      } else { // デフォルトは最初の一致
+        idx = chars.indexOf(spec.char);
+      }
+      if (idx >= 0) marks[idx] = spec.text;
+    });
+
+    return chars.map((ch, i) =>
+      marks[i] ? `<ruby>${ch}<rt>${marks[i]}</rt></ruby>` : ch
+    );
   }
 
-  const before = w.slice(0, idx);
-  const middle = `<ruby>${target}<rt>${text}</rt></ruby>`;
-  const after  = w.slice(idx + target.length);
+  // ② まとめてルビ（ruby: {target, text}）にも対応（既存互換）
+  if (wordData.ruby) {
+    const { target, text } = wordData.ruby;
+    const idx = w.lastIndexOf(target); // 語末優先
+    if (idx !== -1) {
+      const before = w.slice(0, idx);
+      const middle = `<ruby>${target}<rt>${text}</rt></ruby>`;
+      const after  = w.slice(idx + target.length);
+      return [...before.split(""), middle, ...after.split("")];
+    }
+  }
 
-  // before/after は1文字ずつ、ruby は1塊で返す
-  return [...before.split(""), middle, ...after.split("")];
+  // ③ 通常表示
+  return wordData.chunks || w.split("");
 }
+
 
 function typeWriter(wordData, callback) {
   const wordEl = document.getElementById("word");
