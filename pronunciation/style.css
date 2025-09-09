@@ -106,6 +106,6 @@ ruby rt {
 @media (max-width: 768px) {
   ruby rt {
     font-size: 0.55em;
-    top: 0.26em;       /* ← 近づけたい/離したい時はここを増減 */
+    top: 0.30em;       /* ← 近づけたい/離したい時はここを増減 */
   }
 }
