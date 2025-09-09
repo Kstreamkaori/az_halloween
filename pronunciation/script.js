@@ -89,7 +89,7 @@ function getDisplayChunks(wordData) {
 
     return chars.map((ch, i) =>
   marks[i]
-    ? `<ruby class="r">${ch}<rt>${marks[i]}</rt></ruby>`
+   ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
     : ch
 );
 
