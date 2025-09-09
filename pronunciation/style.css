@@ -106,7 +106,7 @@ ruby.r rt {
 /* スマホで少し寄せる＆大きくする */
 @media (max-width: 768px) {
   ruby.r rt {
-    font-size: 0.65em;
-    margin-top: -0.10em; /* 近すぎ→-0.24 / 遠い→-0.32 など */
+    font-size: 0.65em;      /* そのままでOK */
+    margin-top: -0.34em;    /* ← -0.34em に変更（まずはここだけ） */
   }
 }
