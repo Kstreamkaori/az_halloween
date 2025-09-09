@@ -107,6 +107,6 @@ ruby.r rt {
 @media (max-width: 768px) {
   ruby.r rt {
     font-size: 0.65em;
-    margin-top: -0.20em; /* 近すぎ→-0.24 / 遠い→-0.32 など */
+    margin-top: -0.10em; /* 近すぎ→-0.24 / 遠い→-0.32 など */
   }
 }
