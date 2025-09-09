@@ -110,7 +110,7 @@ ruby.r rt {
     line-height: 1;
     display: inline-block;      /* transform を効かせる */
     margin-top: 0;              /* 無視される可能性があるので 0 に */
-    transform: translateY(-0.48em); /* ← ここで距離を調整（上に寄せる） */
+    transform: translateY(-0.44em); /* ← ここで距離を調整（上に寄せる） */
   }
 }
 
