@@ -90,22 +90,23 @@ button.nav:hover {
   background-color: #e69500;   /* 濃いオレンジに変化 */
 }
 
-/* ルビ（フリガナ）の見た目・位置調整 */
-ruby { ruby-position: over; }  /* 念のため明示 */
-
+/* ルビ（フリガナ）の見た目・位置調整（PC基準） */
+ruby { ruby-position: over; }
 ruby rt {
-  font-size: 0.45em;   /* 小さめ */
+  font-size: 0.45em;
   color: #666;
   line-height: 1;
-  position: relative;  /* ← 位置を微調整できるようにする */
-  top: 0.18em;         /* ← 下へ寄せる（数値で近づけ/離せる） */
+  position: relative;
+  top: 0.18em;               /* 下へ寄せる */
   letter-spacing: 0.02em;
 }
 
 /* スマホでさらに寄せる＆少し大きくする */
 @media (max-width: 768px) {
   ruby rt {
-    font-size: 0.55em;
-    top: 0.30em;       /* ← 近づけたい/離したい時はここを増減 */
+    font-size: 0.60em;       /* 少し大きく */
+    top: 0.34em;             /* さらに下へ寄せる */
+    display: inline-block;   /* iOSで位置指定を効かせる */
+    transform: translateY(0.08em);  /* 追い寄せ（好みで±調整） */
   }
-}
+}  /* ← この閉じカッコを忘れない！ */
