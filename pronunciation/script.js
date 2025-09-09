@@ -14,7 +14,7 @@ const data = [
   { word: "got", sound: "got.mp3" }, 
   { word: "has", sound: "has.mp3" },
   { word: "muffin", sound: "muffin.mp3", chunks: ["m", "u", "ff", "i", "n"] },
-  { word: "passes", sound: "passes.mp3", chunks: ["p", "a", "ss", "e", "s"] },
+  { word: "passes", sound: "passes.mp3", chunks: ["p", "a", "ss", "e", "s"], furigana: "iz"   // 👈 フリガナを追加！ },
   { word: "pot", sound: "pot.mp3" },
   { word: "runs", sound: "runs.mp3" },
   { word: "Sam", sound: "sam.mp3" },
