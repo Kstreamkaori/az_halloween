@@ -77,8 +77,8 @@ button.btn {
 }
 
 button.nav {
-  background-color: #B0B0B0;   /* 標準のグレー */
-  color: #fff;                 /* 白文字にして視認性UP */
+  background-color: #FFA500;   /* 鮮やかオレンジ */
+  color: #fff;                 /* 白文字で見やすく */
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
@@ -87,5 +87,5 @@ button.nav {
 }
 
 button.nav:hover {
-  background-color: #8c8c8c;   /* 濃いグレーに変化 */
+  background-color: #e69500;   /* 濃いオレンジに変化 */
 }
