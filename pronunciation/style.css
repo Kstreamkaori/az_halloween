@@ -112,7 +112,7 @@ ruby.r rt {
   font-size: 0.55em;
   color: #666;
   line-height: 1;
-  margin-top: -0.40em;  /* ← ここが距離 */
+  margin-top: -0.50em;  /* ← ここが距離 */
 }
 
 }
