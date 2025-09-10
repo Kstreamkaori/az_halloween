@@ -96,65 +96,24 @@ button.nav:hover {
 
 
 
-/* ==== Ruby（Safari/Chrome iOS安定）==== */
-ruby.r { ruby-position: over; ruby-merge: separate; }
-ruby.r rb { line-height: 1; }
-
-/* PC基準 */
-ruby.r rt {
-  font-size: 0.58em;
-  color: #666;
-  line-height: 1;
-  position: relative;
-  top: -0.32em;          /* PCの寄せ量 */
-}
-
-/* Safari/Chrome安定版ルビ設定 */
+/* === Ruby（安定の基準点）=== */
 ruby.r {
-  display: ruby;            /* ブロック化ではなくruby本来の表示に */
-  ruby-position: over;      /* 上ルビ */
-  ruby-merge: separate;     /* 文字ごとに独立して処理 */
+  display: ruby;         /* ネイティブrubyを使う */
+  ruby-position: over;   /* 上ルビ */
+  ruby-merge: separate;  /* 文字ごとに独立 */
+  line-height: 1;
 }
-
 ruby.r rb {
-  display: ruby-base;       /* 明示的にベース文字扱い */
+  display: ruby-base;
   line-height: 1;
 }
-
 ruby.r rt {
-  display: block;
-  font-size: 0.6em;
+  display: ruby-text;
+  font-size: 0.60em;     /* サイズは後で調整OK */
   color: #666;
   line-height: 1;
-  position: relative;    /* ← 追加：位置指定を有効化 */
-  top: -0.40em;          /* ← 変更：距離は top で調整 */
-  margin-top: 0;         /* ← 無効化（お守り） */
+  margin-top: -0.30em;   /* 距離はまず控えめ。後で詰める */
 }
 
-/* === 疑似ルビ（全ブラウザ安定） === */
-.anno {                     /* 1文字用の箱 */
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1;
-}
-
-.anno .rt {                 /* 上に出す小さい文字 */
-  font-size: 0.62em;
-  color: #666;
-  line-height: 1;
-  margin-bottom: var(--rt-gap, -0.42em);  /* ← 距離はここで調整 */
-  pointer-events: none;
-}
-
-.anno .rb {                 /* 下のベース文字 */
-  line-height: 1;
-}
-
-/* スマホで少し寄せる（好みで調整） */
-@media (max-width: 768px) {
-  .anno .rt { margin-bottom: var(--rt-gap-sp, -0.48em); }
-}
-
-/* ルビが出てもレイアウトが大きくズレないように */
-#word-area { min-height: 120px; }
+/* 単語の途中改行を防ぐ（入ってなければ追加） */
+#word { white-space: nowrap; display: inline-block; }
