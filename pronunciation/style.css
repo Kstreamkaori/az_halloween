@@ -123,6 +123,6 @@ ruby.r rt {
   color: #666;
   line-height: 1;
   position: relative;    /* ← 追加：位置指定を有効化 */
-  top: -0.40em;          /* ← 変更：距離は top で調整 */
+  top: -0.44em;          /* ← 変更：距離は top で調整 */
   margin-top: 0;         /* ← 無効化（お守り） */
 }
