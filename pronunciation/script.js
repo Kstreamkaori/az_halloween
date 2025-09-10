@@ -67,16 +67,18 @@ function nextWord() {
 }
 
 function getDisplayChunks(wordData) {
-const chunks = wordData.chunks || wordData.word.split("");
+  // チャンク（なければ単語1個）
+  const chunks = wordData.chunks || [wordData.word];
 
-  // ルビ指定が無ければ、そのまま（チャンク単位で返す）
+  // ルビ指定がなければそのまま返す（チャンクを壊さない）
   if (!Array.isArray(wordData.rubyChars) || wordData.rubyChars.length === 0) {
     return chunks;
   }
 
-  // 文字ごとの注釈リストを作る（例: e→"i", 最後の s→"z"）
+  // 単語全体の文字配列に対して、どこに rt を載せるかマークを作る
   const word = wordData.word.split("");
   const marks = new Array(word.length).fill(null);
+
   wordData.rubyChars.forEach(spec => {
     let idx = -1;
     if (typeof spec.index === "number") {
@@ -89,25 +91,25 @@ const chunks = wordData.chunks || wordData.word.split("");
     if (idx >= 0) marks[idx] = spec.text;
   });
 
-  // チャンクごとにHTMLを作る（チャンクは壊さない）
-  let pos = 0; // 単語内の走査位置
+  // チャンク単位を保ったまま、各文字に擬似ルビを付ける
+  let pos = 0; // 単語全体の走査位置
   const htmlChunks = chunks.map(chunk => {
     let out = "";
     for (let i = 0; i < chunk.length; i++, pos++) {
       const ch = chunk[i];
       const mark = marks[pos];
       if (mark) {
-        // 擬似ルビで包む
         out += `<span class="anno"><span class="rt">${mark}</span><span class="rb">${ch}</span></span>`;
       } else {
         out += ch;
       }
     }
-    return out; // 1チャンク=1文字列のまま返す（typewriterが壊れない）
+    return out; // 1チャンク = 1文字列のまま返す
   });
 
   return htmlChunks;
 }
+
 function typeWriter(wordData, callback) {
   const wordEl = document.getElementById("word");
   const chunks = getDisplayChunks(wordData);  // ← ここで表示用チャンクを取得
