@@ -66,73 +66,47 @@ function nextWord() {
   showWord();
 }
 
-// ルビ付き表示用のチャンクを作る
 function getDisplayChunks(wordData) {
-  const w = wordData.word;
+  const chunks = wordData.chunks || [wordData.word];
 
- // ① 文字ごとルビ（rubyChars）があれば優先
-if (Array.isArray(wordData.rubyChars) && wordData.rubyChars.length) {
-  const chars = w.split("");
-  const marks = new Array(chars.length).fill(null);
+  // ルビ指定が無ければ、そのまま（チャンク単位で返す）
+  if (!Array.isArray(wordData.rubyChars) || wordData.rubyChars.length === 0) {
+    return chunks;
+  }
 
+  // 文字ごとの注釈リストを作る（例: e→"i", 最後の s→"z"）
+  const word = wordData.word.split("");
+  const marks = new Array(word.length).fill(null);
   wordData.rubyChars.forEach(spec => {
     let idx = -1;
     if (typeof spec.index === "number") {
-      idx = spec.index;            // 0-based
+      idx = spec.index;
     } else if (spec.which === "last") {
-      idx = chars.lastIndexOf(spec.char);
+      idx = word.lastIndexOf(spec.char);
     } else {
-      idx = chars.indexOf(spec.char);
+      idx = word.indexOf(spec.char);
     }
     if (idx >= 0) marks[idx] = spec.text;
   });
 
- return chars.map((ch, i) =>
-  marks[i]
-    ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
-    : ch
-);
-
-
-}
-
-
-  // ② まとめてルビ（ruby: {target, text}）にも対応（既存互換）
-  if (wordData.ruby) {
-    const { target, text } = wordData.ruby;
-    const idx = w.lastIndexOf(target); // 語末優先
-    if (idx !== -1) {
-      const before = w.slice(0, idx);
-      const middle = `<ruby>${target}<rt>${text}</rt></ruby>`;
-      const after  = w.slice(idx + target.length);
-      return [...before.split(""), middle, ...after.split("")];
+  // チャンクごとにHTMLを作る（チャンクは壊さない）
+  let pos = 0; // 単語内の走査位置
+  const htmlChunks = chunks.map(chunk => {
+    let out = "";
+    for (let i = 0; i < chunk.length; i++, pos++) {
+      const ch = chunk[i];
+      const mark = marks[pos];
+      if (mark) {
+        // 擬似ルビで包む
+        out += `<span class="anno"><span class="rt">${mark}</span><span class="rb">${ch}</span></span>`;
+      } else {
+        out += ch;
+      }
     }
-  }
+    return out; // 1チャンク=1文字列のまま返す（typewriterが壊れない）
+  });
 
-  // ③ 通常表示
-  return wordData.chunks || w.split("");
-}
-
-
-function typeWriter(wordData, callback) {
-  const wordEl = document.getElementById("word");
-    const chunks = getDisplayChunks(wordData);
-  let i = 0;
-
-  function type() {
-    if (i < chunks.length) {
-      wordEl.innerHTML += chunks[i];
-      i++;
-      setTimeout(type, 600);
-    } else {
-      if (typeof callback === "function") callback();
-      setTimeout(() => {
-        document.getElementById("sound-btn").style.visibility = "visible";
-      }, 2000); // ← ここでディレイ！
-    }
-  }
-
-  type();
+  return htmlChunks;
 }
 
 
