@@ -105,15 +105,22 @@ ruby.r rt {
   top: -0.32em;          /* PCの寄せ量 */
 }
 
-/* スマホ（Safari/Chrome共通） */
-@media (max-width: 768px) {
- ruby.r rt {
-  display: block;
-  font-size: 0.55em;
-  color: #666;
-  line-height: 1;
-  margin-top: -0.40em;  /* ← ここが距離 */
+/* Safari/Chrome安定版ルビ設定 */
+ruby.r {
+  display: ruby;            /* ブロック化ではなくruby本来の表示に */
+  ruby-position: over;      /* 上ルビ */
+  ruby-merge: separate;     /* 文字ごとに独立して処理 */
 }
 
+ruby.r rb {
+  display: ruby-base;       /* 明示的にベース文字扱い */
+  line-height: 1;
 }
-/* ===================================== */
+
+ruby.r rt {
+  display: ruby-text;       /* 明示的にルビ文字扱い */
+  font-size: 0.6em;         /* 少し小さめ */
+  color: #666;
+  line-height: 1;
+  margin-top: -0.3em;       /* 上に寄せる（数値で微調整） */
+}
