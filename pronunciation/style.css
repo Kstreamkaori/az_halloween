@@ -119,3 +119,8 @@ ruby.r rt {
 
 /* 単語の途中改行を防ぐ（入ってなければ追加） */
 #word { white-space: nowrap; display: inline-block; }
+
+@media (max-width: 768px) {
+  ruby.r rt { top: -0.60em; } /* 例：スマホ寄せ強め */
+}
+
