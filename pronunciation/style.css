@@ -1,139 +1,72 @@
-/* ベースのスタイル */
-body {
-  font-family: 'Andika', sans-serif;
-  text-align: center;
-  background: #FFE5B4;   /* 白っぽいけどオレンジ感残る */
-  color: #333;
-  padding: 2em;
+/* ベース */
+body{
+  font-family:'Andika',sans-serif;
+  text-align:center;
+  background:#FFE5B4;
+  color:#333;
+  padding:2em;
 }
-/* 単語表示エリア */
-/* 単語の行を固定＆中央寄せ（下にズレない） */
+
+/* 単語の行：固定＆中央寄せ（下にズレない） */
 #word-area{
-  height: 200px;                /* PCの固定高さ：必要なら後で± */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height:200px;                 /* PC */
+  min-height:120px;             /* 保険 */
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-/* 行内で折り返させない＆行高で上下にぶれない */
+/* 単語の箱：折返しなし＆上下ブレ防止 */
 #word{
-  white-space: nowrap;
-  display: inline-block;
-  line-height: 1;
+  white-space:nowrap;
+  display:inline-block;
+  line-height:1;
 }
 
-/* スマホは少し高さを大きく（文字大きめ対策） */
-@media (max-width: 768px){
-  #word-area{ height: 260px; }
+/* スマホは高さだけ少し増やす */
+@media (max-width:768px){
+  #word-area{height:260px;}
 }
 
-
-/* イラストエリア */
-#image-area {
-  margin-top: 20px;
-}
-
-#image-area img {
-  width: 200px;
-  height: auto;
-  margin: 0 auto 10px;
-  display: block;
-  visibility: hidden;
+/* イラスト */
+#image-area{margin-top:20px;}
+#image-area img{
+  width:200px;height:auto;margin:0 auto 10px;display:block;visibility:hidden;
 }
 
 /* ボタン共通 */
-button.btn {
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+button.btn{
+  border:none;border-radius:8px;padding:10px 20px;font-size:16px;cursor:pointer;transition:background-color .2s ease;
 }
 
-#sound-btn {
-  background-color: #9B30FF;   /* 鮮やかな紫 */
-  color: #fff;                 /* 白文字にしてコントラストUP */
-  border: 2px solid #6A0DAD;   /* 濃い紫で縁取り */
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  visibility: hidden;
+/* サウンドボタン */
+#sound-btn{
+  background:#9B30FF;color:#fff;border:2px solid #6A0DAD;border-radius:8px;padding:10px 20px;font-size:16px;cursor:pointer;visibility:hidden;
+}
+#sound-btn:hover{background:#7A1FCC;}
+#sound-btn-area{
+  text-align:center;min-height:70px;margin:30px 0 10px;display:flex;justify-content:center;align-items:center;
 }
 
-#sound-btn:hover {
-  background-color: #7A1FCC;   /* 濃い紫に変化 */
+/* 画像ボタン（未使用） */
+#show-image-btn{
+  visibility:hidden;display:inline-block;margin:0 auto;background:#f9d390;color:#333;border:none;border-radius:8px;padding:10px 20px;font-size:16px;cursor:pointer;
 }
 
-
-/* サウンドボタンの配置 */
-#sound-btn-area {
-  text-align: center;
-  min-height: 70px;
-  margin: 30px 0 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 📸イラストボタン */
-#show-image-btn {
-  visibility: hidden;
-  display: inline-block;
-  margin: 0 auto;
-  background-color: #f9d390;
-  color: #333;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button.nav {
-  background-color: #FFA500;   /* 鮮やかオレンジ */
-  color: #fff;                 /* 白文字で見やすく */
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button.nav:hover {
-  background-color: #e69500;   /* 濃いオレンジに変化 */
-}
-
-
+/* ナビボタン */
+button.nav{background:#FFA500;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:16px;cursor:pointer;}
+button.nav:hover{background:#e69500;}
 
 /* === 擬似ルビ（全ブラウザ安定） === */
-.anno{                    /* 1文字の箱 */
-  display:inline-flex;
-  flex-direction:column;
-  align-items:center;
-  line-height:1;
+.anno{
+  display:inline-flex;flex-direction:column;align-items:center;line-height:1;
 }
-
-.anno .rt{                /* 上に出す小さい文字 */
-  font-size:0.65em;
-  color:#C62828;          /* いま使ってる赤 */
-  line-height:1;
-  margin-bottom:-0.60em;  /* 近づけ量（大きいほど近い）*/
-  pointer-events:none;
+.anno .rt{
+  font-size:.65em;color:#C62828;line-height:1;margin-bottom:-0.60em;pointer-events:none;
 }
+.anno .rb{line-height:1;}
 
-.anno .rb{                /* 下のベース文字 */
-  line-height:1;
-}
-
-/* スマホはさらに寄せる */
+/* スマホはさらに寄せる（必要なら数値だけ調整） */
 @media (max-width:768px){
-  .anno .rt{ margin-bottom:-0.68em; }
+  .anno .rt{margin-bottom:-0.68em;}
 }
-
-/* ルビで全体がガタつかないように最低高を少し多めに */
-#word-area{ min-height: 120px; }
-
-/* 単語を一列で保つ＆中央寄せの安定 */
-#word{ white-space:nowrap; display:inline-block; }
