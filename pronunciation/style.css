@@ -107,15 +107,17 @@ ruby.r rb {
   display: ruby-base;
   line-height: 1;
 }
+/* ここだけ差し替え */
 ruby.r rt {
-  display: ruby-text;
+  display: block;        /* ← ruby-text をやめて、top が確実に効く形に */
   font-size: 0.60em;
-  color: #666;
+  color: #d00;
   line-height: 1;
-- margin-top: -0.30em;   /* ← 使わない */
-+ position: relative;     /* ← 追加 */
-+ top: -0.54em;           /* ← 見た目だけ上へ。まずはこの値 */
+  position: relative;
+  top: -0.60em;          /* まず -0.60em に。動いたら±0.02〜0.04で微調整 */
+  margin-top: 0;
 }
+
 
 /* 単語の途中改行を防ぐ（入ってなければ追加） */
 #word { white-space: nowrap; display: inline-block; }
