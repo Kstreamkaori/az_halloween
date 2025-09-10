@@ -87,12 +87,12 @@ if (Array.isArray(wordData.rubyChars) && wordData.rubyChars.length) {
     if (idx >= 0) marks[idx] = spec.text;
   });
 
-  // ★ここが重要：<rb> を必ず入れる
-  return chars.map((ch, i) =>
+ return chars.map((ch, i) =>
   marks[i]
-    ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
+    ? `<span class="anno"><span class="rt">${marks[i]}</span><span class="rb">${ch}</span></span>`
     : ch
 );
+
 
 }
 
