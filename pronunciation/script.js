@@ -89,7 +89,7 @@ if (Array.isArray(wordData.rubyChars) && wordData.rubyChars.length) {
 
  return chars.map((ch, i) =>
   marks[i]
-    ? `<span class="anno"><span class="rt">${marks[i]}</span><span class="rb">${ch}</span></span>`
+    ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
     : ch
 );
 
