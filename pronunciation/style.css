@@ -7,15 +7,26 @@ body {
   padding: 2em;
 }
 /* 単語表示エリア */
-#word-area {
-  font-size: 64pt;
-  margin: 20px 0 10px;
-  min-height: 90px;
+/* 単語の行を固定＆中央寄せ（下にズレない） */
+#word-area{
+  height: 200px;                /* PCの固定高さ：必要なら後で± */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#word {
+
+/* 行内で折り返させない＆行高で上下にぶれない */
+#word{
   white-space: nowrap;
   display: inline-block;
+  line-height: 1;
 }
+
+/* スマホは少し高さを大きく（文字大きめ対策） */
+@media (max-width: 768px){
+  #word-area{ height: 260px; }
+}
+
 
 /* イラストエリア */
 #image-area {
