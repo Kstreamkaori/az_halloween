@@ -108,7 +108,26 @@ function getDisplayChunks(wordData) {
 
   return htmlChunks;
 }
+function typeWriter(wordData, callback) {
+  const wordEl = document.getElementById("word");
+  const chunks = getDisplayChunks(wordData);  // ← ここで表示用チャンクを取得
+  let i = 0;
 
+  function type() {
+    if (i < chunks.length) {
+      wordEl.innerHTML += chunks[i];
+      i++;
+      setTimeout(type, 600);  // 1文字ずつ出す間隔（必要なら調整）
+    } else {
+      if (typeof callback === "function") callback();
+      setTimeout(() => {
+        document.getElementById("sound-btn").style.visibility = "visible";
+      }, 2000); // サウンドボタンの表示を遅らせる
+    }
+  }
+
+  type();
+}
 
 window.onload = () => {
   shuffleWords();
