@@ -109,10 +109,12 @@ ruby.r rb {
 }
 ruby.r rt {
   display: ruby-text;
-  font-size: 0.60em;     /* サイズは後で調整OK */
+  font-size: 0.60em;
   color: #666;
   line-height: 1;
-  margin-top: -1.0em;   /* 距離はまず控えめ。後で詰める */
+- margin-top: -0.30em;   /* ← 使わない */
++ position: relative;     /* ← 追加 */
++ top: -0.46em;           /* ← 見た目だけ上へ。まずはこの値 */
 }
 
 /* 単語の途中改行を防ぐ（入ってなければ追加） */
