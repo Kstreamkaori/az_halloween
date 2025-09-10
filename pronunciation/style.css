@@ -107,9 +107,13 @@ ruby.r rt {
 
 /* スマホ（Safari/Chrome共通） */
 @media (max-width: 768px) {
-  ruby.r rt {
-    font-size: 0.68em;   /* 少し大きめに */
-    top: -0.44em;        /* 距離。遠ければ -0.48 / 近ければ -0.40 に */
-  }
+ ruby.r rt {
+  display: block;
+  font-size: 0.55em;
+  color: #666;
+  line-height: 1;
+  margin-top: -0.22em;  /* ← ここが距離 */
+}
+
 }
 /* ===================================== */
