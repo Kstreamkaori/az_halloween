@@ -96,33 +96,33 @@ button.nav:hover {
 
 
 
-/* === Ruby（安定の基準点）=== */
-ruby.r {
-  display: ruby;         /* ネイティブrubyを使う */
-  ruby-position: over;   /* 上ルビ */
-  ruby-merge: separate;  /* 文字ごとに独立 */
-  line-height: 1;
-}
-ruby.r rb {
-  display: ruby-base;
-  line-height: 1;
-}
-/* ここだけ差し替え */
-ruby.r rt {
-  display: block;        /* ← ruby-text をやめて、top が確実に効く形に */
-  font-size: 0.60em;
-  color: #d00;
-  line-height: 1;
-  position: relative;
-  top: -0.60em;          /* まず -0.60em に。動いたら±0.02〜0.04で微調整 */
-  margin-top: 0;
+/* === 擬似ルビ（全ブラウザ安定） === */
+.anno{                    /* 1文字の箱 */
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:1;
 }
 
-
-/* 単語の途中改行を防ぐ（入ってなければ追加） */
-#word { white-space: nowrap; display: inline-block; }
-
-@media (max-width: 768px) {
-  ruby.r rt { top: -0.60em; } /* 例：スマホ寄せ強め */
+.anno .rt{                /* 上に出す小さい文字 */
+  font-size:0.65em;
+  color:#C62828;          /* いま使ってる赤 */
+  line-height:1;
+  margin-bottom:-0.60em;  /* 近づけ量（大きいほど近い）*/
+  pointer-events:none;
 }
 
+.anno .rb{                /* 下のベース文字 */
+  line-height:1;
+}
+
+/* スマホはさらに寄せる */
+@media (max-width:768px){
+  .anno .rt{ margin-bottom:-0.68em; }
+}
+
+/* ルビで全体がガタつかないように最低高を少し多めに */
+#word-area{ min-height: 120px; }
+
+/* 単語を一列で保つ＆中央寄せの安定 */
+#word{ white-space:nowrap; display:inline-block; }
