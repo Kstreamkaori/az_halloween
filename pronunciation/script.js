@@ -70,31 +70,31 @@ function nextWord() {
 function getDisplayChunks(wordData) {
   const w = wordData.word;
 
-  // ① 文字ごとルビ（rubyChars）があれば優先
-  if (Array.isArray(wordData.rubyChars) && wordData.rubyChars.length) {
-    const chars = w.split("");
-    const marks = new Array(chars.length).fill(null);
+ // ① 文字ごとルビ（rubyChars）があれば優先
+if (Array.isArray(wordData.rubyChars) && wordData.rubyChars.length) {
+  const chars = w.split("");
+  const marks = new Array(chars.length).fill(null);
 
-    wordData.rubyChars.forEach(spec => {
-      let idx = -1;
-      if (typeof spec.index === "number") {
-        idx = spec.index; // 0-based 位置指定
-      } else if (spec.which === "last") {
-        idx = chars.lastIndexOf(spec.char);
-      } else { // デフォルトは最初の一致
-        idx = chars.indexOf(spec.char);
-      }
-      if (idx >= 0) marks[idx] = spec.text;
-    });
+  wordData.rubyChars.forEach(spec => {
+    let idx = -1;
+    if (typeof spec.index === "number") {
+      idx = spec.index;            // 0-based
+    } else if (spec.which === "last") {
+      idx = chars.lastIndexOf(spec.char);
+    } else {
+      idx = chars.indexOf(spec.char);
+    }
+    if (idx >= 0) marks[idx] = spec.text;
+  });
 
-    return chars.map((ch, i) =>
-  marks[i]
-   ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
-    : ch
-);
+  // ★ここが重要：<rb> を必ず入れる
+  return chars.map((ch, i) =>
+    marks[i]
+      ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
+      : ch
+  );
+}
 
-
-  }
 
   // ② まとめてルビ（ruby: {target, text}）にも対応（既存互換）
   if (wordData.ruby) {
