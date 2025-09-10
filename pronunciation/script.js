@@ -71,7 +71,7 @@ function getDisplayChunks(wordData) {
 
   // ルビ指定が無ければ、そのまま（チャンク単位で返す）
   if (!Array.isArray(wordData.rubyChars) || wordData.rubyChars.length === 0) {
-    return htmlchunks;
+    return chunks;
   }
 
   // 文字ごとの注釈リストを作る（例: e→"i", 最後の s→"z"）
