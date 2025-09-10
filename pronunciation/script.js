@@ -67,7 +67,7 @@ function nextWord() {
 }
 
 function getDisplayChunks(wordData) {
-  const chunks = wordData.chunks || [wordData.word];
+const chunks = wordData.chunks || wordData.word.split("");
 
   // ルビ指定が無ければ、そのまま（チャンク単位で返す）
   if (!Array.isArray(wordData.rubyChars) || wordData.rubyChars.length === 0) {
