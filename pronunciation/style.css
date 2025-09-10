@@ -126,3 +126,31 @@ ruby.r rt {
   top: -0.40em;          /* ← 変更：距離は top で調整 */
   margin-top: 0;         /* ← 無効化（お守り） */
 }
+
+/* === 疑似ルビ（全ブラウザ安定） === */
+.anno {                     /* 1文字用の箱 */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.anno .rt {                 /* 上に出す小さい文字 */
+  font-size: 0.62em;
+  color: #666;
+  line-height: 1;
+  margin-bottom: var(--rt-gap, -0.42em);  /* ← 距離はここで調整 */
+  pointer-events: none;
+}
+
+.anno .rb {                 /* 下のベース文字 */
+  line-height: 1;
+}
+
+/* スマホで少し寄せる（好みで調整） */
+@media (max-width: 768px) {
+  .anno .rt { margin-bottom: var(--rt-gap-sp, -0.48em); }
+}
+
+/* ルビが出てもレイアウトが大きくズレないように */
+#word-area { min-height: 120px; }
