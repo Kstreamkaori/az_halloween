@@ -89,10 +89,11 @@ if (Array.isArray(wordData.rubyChars) && wordData.rubyChars.length) {
 
   // ★ここが重要：<rb> を必ず入れる
   return chars.map((ch, i) =>
-    marks[i]
-      ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
-      : ch
-  );
+  marks[i]
+    ? `<ruby class="r"><rb>${ch}</rb><rt>${marks[i]}</rt></ruby>`
+    : ch
+);
+
 }
 
 
