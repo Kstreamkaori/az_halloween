@@ -1,128 +1,35 @@
 const data = [
-  {
-    word: "tag",
-    image: "assets/tag.png"
-  },
-  {
-    word: "in",
-    image: "assets/in.png"
-  },
-  {
-    word: "fog",
-    image: "assets/fog.png"
-  },
-  {
-    word: "a",
-    image: "assets/a.png"
-  },
-  {
-    word: "pin",
-    image: "assets/pin.png"
-  },
-  {
-    word: "in",
-    image: "assets/in.png"
-  },
-  {
-    word: "a",
-    image: "assets/a.png"
-  },
-  {
-    word: "tin",
-    image: "assets/tin.png"
-  },
-  {
-    word: "a",
-    image: "assets/a.png"
-  },
-  {
-    word: "kid",
-    image: "assets/kid.png"
-  },
-  {
-    word: "gets",
-    image: "assets/get.png"
-  },
-  {
-    word: "a",
-    image: "assets/a.png"
-  },
-  {
-    word: "tag",
-    image: "assets/tag.png"
-  },
-  {
-    word: "frog",
-    image: "assets/frog.png"
-  },
-  {
-    word: "picks",
-    chunks: ["pi", "ck", "s"],
-    image: "assets/pick.png"
-  },
-  {
-    word: "up",
-    image: "assets/up.png"
-  },
-  {
-    word: "a",
-    image: "assets/a.png"
-  },
-  {
-    word: "pen",
-    image: "assets/pen.png"
-  },
-  {
-    word: "a",
-    image: "assets/a.png"
-  },
-  {
-    word: "kid",
-    image: "assets/kid.png"
-  },
-  {
-    word: "clips",
-    image: "assets/clip.png"
-  },
-  {
-    word: "a",
-    image: "assets/a.png"
-  },
-  {
-    word: "tag",
-    image: "assets/tag.png"
-  },
-  {
-    word: "frog",
-    image: "assets/frog.png"
-  },
-  {
-    word: "taps",
-    image: "assets/tap.png"
-  },
-  {
-    word: "a",
-    image: "assets/a.png"
-  },
-  {
-    word: "pocket",
-    chunks: ["po", "ck", "e", "t"],
-    image: "assets/pocket.png"
-  },
-  {
-    word: "fog",
-    image: "assets/fog.png"
-  },
-  {
-    word: "is",
-    image: "assets/is.png"
-  },
-  {
-    word: "off",
-    chunks: ["o", "ff"],
-    image: "assets/off.png"
-  }
+  { word: "muffin", image: "assets/muffin.png" },
+  { word: "in",     image: "assets/in.png" },
+  { word: "a",      image: "assets/a.png" },
+  { word: "coffin", image: "assets/coffin.png" },
+  { word: "Sam",    image: "assets/sam.png" },
+  { word: "gets",   image: "assets/gets.png" },   // 画像名は gets.png に統一
+  { word: "a",      image: "assets/a.png" },
+  { word: "bucket", image: "assets/bucket.png" },
+  { word: "a",      image: "assets/a.png" },
+  { word: "black",  image: "assets/black.png" },
+  { word: "cat",    image: "assets/cat.png" },
+  { word: "passes", image: "assets/passes.png", chunks: ["pa","ss","es"] },
+  { word: "bats",   image: "assets/bats.png" },
+  { word: "zap",    image: "assets/zap.png" },
+  { word: "up",     image: "assets/up.png" },
+  { word: "at",     image: "assets/at.png" },
+  { word: "a",      image: "assets/a.png" },
+  { word: "pot",    image: "assets/pot.png" },
+  { word: "Sam",    image: "assets/sam.png" },
+  { word: "runs",   image: "assets/runs.png" },
+  { word: "Sam",    image: "assets/sam.png" },
+  { word: "got",    image: "assets/got.png" },
+  { word: "a",      image: "assets/a.png" },
+  { word: "bag",    image: "assets/bag.png" },
+  { word: "from",   image: "assets/from.png" },
+  { word: "a",      image: "assets/a.png" },
+  { word: "coffin", image: "assets/coffin.png" },
+  { word: "a",      image: "assets/a.png" },
+  { word: "muffin", image: "assets/muffin.png" }
 ];
+
 
 let current = 0;
 
