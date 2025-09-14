@@ -14,6 +14,7 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
+  font-size: 64pt;
 }
 
 /* 単語の箱：折返しなし＆上下ブレ防止 */
@@ -25,7 +26,7 @@ body{
 
 /* スマホは高さだけ少し増やす */
 @media (max-width:768px){
-  #word-area{height:260px;}
+  #word-area{height:260px; font-size: 52pt;}
 }
 
 /* イラスト */
