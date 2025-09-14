@@ -58,16 +58,26 @@ button.btn{
 button.nav{background:#FFA500;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:16px;cursor:pointer;}
 button.nav:hover{background:#e69500;}
 
-/* === 擬似ルビ（全ブラウザ安定） === */
+/* 擬似ルビ：親文字は動かさず、ルビだけを上に重ねる */
 .anno{
-  display:inline-flex;flex-direction:column;align-items:center;line-height:1;
+  position: relative;         /* ← 追加 */
+  display: inline-block;      /* ← 変更（inline-flexはやめる） */
+  line-height: 1;
+}
+.anno .rb{
+  display: inline-block;
+  line-height: 1;
 }
 .anno .rt{
-  font-size:.65em;color:#C62828;line-height:1;margin-bottom:-0.70em;pointer-events:none;
+  position: absolute;         /* ← 追加：重ねる */
+  left: 50%;
+  bottom: 100%;               /* ベースの真上 */
+  transform: translate(-50%, -0.10em);  /* 距離調整はここだけ */
+  font-size: 0.60em;
+  color: #666;
+  line-height: 1;
+  pointer-events: none;
 }
-.anno .rb{line-height:1;}
-
-/* スマホはさらに寄せる（必要なら数値だけ調整） */
 @media (max-width:768px){
-  .anno .rt{margin-bottom:-0.78em;}
+  .anno .rt{ transform: translate(-50%, -0.16em); } /* スマホは少し寄せる */
 }
