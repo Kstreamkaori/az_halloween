@@ -64,22 +64,26 @@ body.menu{
 
 
 /* ボタン共通デザイン */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: min(680px, 92vw);
-  min-height: 72px;
-  padding: 18px 24px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-size: clamp(18px, 3.6vw, 28px);
-  font-weight: 700;
-  color: #fff;
-  background: #F29B00; 
-  box-shadow: 0 6px 12px rgba(0,0,0,.25);
-  transition: transform .06s ease, box-shadow .12s ease;
+button {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #ffa500, #ff7f00);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
+
+/* 1つめのボタンと2つめのボタンの間隔をしっかり確保 */
+button:first-of-type {
+  margin-bottom: 40px; /* ←ここでしっかり間をあける */
+}
+
 .btn:hover { 
   transform: translateY(-2px); 
   box-shadow: 0 8px 16px rgba(0,0,0,.35);
