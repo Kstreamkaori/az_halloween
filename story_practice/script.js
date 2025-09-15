@@ -1,12 +1,12 @@
 const data = [
-  { word: "muffin", image: "assets/muffin.png" },
+  { word: "muffin", image: "assets/muffin.png", chunks: ["m","u","ff","i","n"] },
   { word: "in",     image: "assets/in.png" },
   { word: "a",      image: "assets/a.png" },
-  { word: "coffin", image: "assets/coffin.png" },
+  { word: "coffin", image: "assets/coffin.png", chunks: ["c","o","ff","i","n"] },
   { word: "Sam",    image: "assets/sam.png" },
-  { word: "gets",   image: "assets/get.png" },   // 画像名は gets.png に統一
+  { word: "gets",   image: "assets/get.png" },   // 画像名は get.png に統一
   { word: "a",      image: "assets/a.png" },
-  { word: "bucket", image: "assets/bucket.png" },
+  { word: "bucket", image: "assets/bucket.png", chunks: ["b","u","ck","e","t"] },
   { word: "a",      image: "assets/a.png" },
   { word: "black",  image: "assets/black.png" },
   { word: "cat",    image: "assets/cat.png" },
@@ -25,9 +25,9 @@ const data = [
   { word: "bag",    image: "assets/bag.png" },
   { word: "from",   image: "assets/from.png" },
   { word: "a",      image: "assets/a.png" },
-  { word: "coffin", image: "assets/coffin.png" },
+  { word: "coffin", image: "assets/coffin.png", chunks: ["c","o","ff","i","n"] },
   { word: "a",      image: "assets/a.png" },
-  { word: "muffin", image: "assets/muffin.png" }
+  { word: "muffin", image: "assets/muffin.png", chunks: ["m","u","ff","i","n"]}
 ];
 
 
