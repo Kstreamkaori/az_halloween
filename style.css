@@ -109,6 +109,7 @@ body.menu{
   width: min(48vw, 520px);
   height: min(48vw, 520px);
   background-image: url('assets/web.svg');
+  opacity: 0.2;   /* 数字を小さくするほど薄くなる（0.0〜1.0） */
 }
 
 /* 右下クモの巣 */
@@ -118,6 +119,7 @@ body.menu{
   width: min(52vw, 560px);
   height: min(52vw, 560px);
   background-image: url('assets/web.svg');
+  opacity: 0.2;   /* 数字を小さくするほど薄くなる（0.0〜1.0） */
 }
 
 /* かぼちゃ（左ボタン上） */
