@@ -4,7 +4,7 @@ const data = [
   { word: "a",      image: "assets/a.png" },
   { word: "coffin", image: "assets/coffin.png" },
   { word: "Sam",    image: "assets/sam.png" },
-  { word: "gets",   image: "assets/gets.png" },   // 画像名は gets.png に統一
+  { word: "gets",   image: "assets/get.png" },   // 画像名は gets.png に統一
   { word: "a",      image: "assets/a.png" },
   { word: "bucket", image: "assets/bucket.png" },
   { word: "a",      image: "assets/a.png" },
@@ -20,7 +20,7 @@ const data = [
   { word: "Sam",    image: "assets/sam.png" },
   { word: "runs",   image: "assets/runs.png" },
   { word: "Sam",    image: "assets/sam.png" },
-  { word: "got",    image: "assets/got.png" },
+  { word: "got",    image: "assets/get.png" },
   { word: "a",      image: "assets/a.png" },
   { word: "bag",    image: "assets/bag.png" },
   { word: "from",   image: "assets/from.png" },
