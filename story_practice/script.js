@@ -66,8 +66,15 @@ function showImage() {
   const imageEl = document.getElementById("image");
   const showBtn = document.getElementById("show-image-btn");
   const wordData = data[current];
-  
-  imageEl.src = wordData.image || "";
+
+  // ここから置き換え
+  const base = "../"; // story_practice から見たルート
+  const src = wordData.image || "";
+  imageEl.src = (src.startsWith("/") || src.startsWith("./") || src.startsWith("../"))
+    ? src
+    : base + src;
+  // 置き換えここまで
+
   imageEl.style.display = "block";
   imageEl.style.visibility = "visible";
   showBtn.style.visibility = "hidden";
