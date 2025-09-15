@@ -128,7 +128,7 @@ body.menu{
 /* コウモリ（左ボタン上） */
 .bat{
   top: clamp(90px, 14vh, 140px);
-  left: clamp(28px, 8vw, 120px);
+  left: clamp(28px, 8vw, 90px);
   width: min(18vw, 140px);
   height: min(18vw, 140px);
   background-image: url('assets/bat_2.png');
@@ -136,10 +136,10 @@ body.menu{
 
 /* ドクロ（右ボタン上） */
 .skull{
-  top: clamp(120px, 18vh, 170px);
-  right: clamp(28px, 8vw, 120px);
-  width: min(20vw, 160px);
-  height: min(20vw, 160px);
+  top: clamp(90px, 14vh, 170px);
+  right: clamp(28px, 8vw, 90px);
+  width: min(18vw, 140px);
+  height: min(18vw, 140px);
   background-image: url('assets/skull.png');
 }
 
