@@ -1,77 +1,148 @@
-body {
-  font-family: 'Andika', sans-serif;
-  text-align: center;
-  background: #e0f7fa; /* CUD風のやさしい水色 */
-  color: #333; /* インスタの文字色と統一！ */
-  padding: 2em;
+/* ===== Base ===== */
+:root{
+  --bg: #6E2CCF;           /* ハロウィン紫（ラフに合わせて） */
+  --card: #ffffff;
+  --text: #2f2f2f;
+  --muted: #666;
+  --purple: #7A3AF9;       /* 単語ボタン */
+  --orange: #F29B00;       /* ストーリーボタン */
+  --btn-shadow: 0 8px 18px rgba(0,0,0,.18);
 }
 
-#word-area {
-  font-size: 64pt;
-  margin: 20px 0 10px 0;  /* 上下の余白を調整（下を詰める） */
-  min-height: 90px;
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body.menu{
+  margin: 0;
+  font-family: 'Andika', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
 }
 
-#image-area {
-  margin-top: 20px; /* ← ここ追加 */
-}
-
-#image-area img {
-  width: 200px;
-  height: auto;
-  margin: 0 auto 10px auto;  /* 下に少しだけスペース残す */
-  display: block;
-  visibility: hidden;
-}
-
-
-button.play {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button.play:hover {
-  background-color: #45A049;
-}
-
-button.nav {
-  background-color: #81D4FA;
-  color: #333;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button.nav:hover {
-  background-color: #4FC3F7;
-}
-
-
-#nav-buttons {
-  margin-top: 20px;
-}
-
-#show-btn-area {
-  text-align: center;
-  margin: 10px 0;
-}
-
-#show-image-btn {
-  visibility: hidden;         /* ← ボタンを隠すけどスペースは確保 */
-  display: inline-block;      /* ← 中央寄せのために block → inline-block に */
+/* ===== Layout ===== */
+.container{
+  max-width: 900px;
   margin: 0 auto;
-  background-color: #f9d390;  /* たまご色 */
-  color: #333;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+  padding: 48px 24px 64px;
+  position: relative;
+  z-index: 1; /* デコより前に出す */
+  text-align: center;
+}
+
+.title{
+  margin: 24px 0 8px;
+  font-size: clamp(32px, 5vw, 56px);
+  color: #fff;
+  letter-spacing: .02em;
+  text-shadow:
+    0 2px 0 rgba(0,0,0,.15),
+    0 0 18px rgba(255,255,255,.15);
+}
+
+.lead{
+  margin: 0 0 32px;
+  font-size: clamp(16px, 3.3vw, 22px);
+  color: #f8f4ff;
+  opacity: .9;
+}
+
+/* ===== Buttons ===== */
+.menu-buttons{
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(680px, 92vw);
+  min-height: 72px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: clamp(18px, 3.6vw, 28px);
+  font-weight: 700;
+  color: #fff;
+  box-shadow: var(--btn-shadow);
+  transition: transform .06s ease, box-shadow .15s ease, filter .15s ease;
+  background: #888;
+}
+
+.btn .sub{
+  font-weight: 400;
+  font-size: .7em;
+  margin-left: .5em;
+  color: rgba(255,255,255,.9);
+}
+
+.btn-purple{ background: var(--purple); }
+.btn-orange{ background: var(--orange); color: #402a00; }
+.btn-orange .sub{ color: rgba(64,42,0,.85); }
+
+.btn:active { transform: translateY(1px); }
+.btn:hover  { filter: brightness(1.03); box-shadow: 0 10px 22px rgba(0,0,0,.22); }
+
+/* ===== Decorations (背景画像) =====
+   画像ファイルを /assets に置けば自動で出ます。
+   ファイルが無い場合は何も表示されません（壊れません）。
+   推奨ファイル名：
+   - spider_web_left.svg
+   - spider_web_right.svg
+   - pumpkin.png
+   - skull_hat.png
+*/
+.deco{
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.95;
+}
+
+/* 左上クモの巣 */
+.web-left{
+  top: max(-40px, -6vw);
+  left: max(-40px, -6vw);
+  width: min(48vw, 520px);
+  height: min(48vw, 520px);
+  background-image: url('assets/spider_web_left.svg');
+}
+
+/* 右下クモの巣 */
+.web-right{
+  right: max(-40px, -6vw);
+  bottom: max(-40px, -6vw);
+  width: min(52vw, 560px);
+  height: min(52vw, 560px);
+  background-image: url('assets/spider_web_right.svg');
+}
+
+/* かぼちゃ（左ボタン上） */
+.pumpkin{
+  top: clamp(90px, 14vh, 140px);
+  left: clamp(28px, 8vw, 120px);
+  width: min(18vw, 140px);
+  height: min(18vw, 140px);
+  background-image: url('assets/pumpkin.png');
+}
+
+/* ドクロ（右ボタン上） */
+.skull{
+  top: clamp(120px, 18vh, 170px);
+  right: clamp(28px, 8vw, 120px);
+  width: min(20vw, 160px);
+  height: min(20vw, 160px);
+  background-image: url('assets/skull_hat.png');
+}
+
+/* ===== Responsive 微調整 ===== */
+@media (max-width: 560px){
+  .container{ padding-top: 44px; }
+  .lead{ margin-bottom: 24px; }
+  .btn{ min-height: 66px; }
+  .web-left{ width: 88vw; height: 88vw; }
+  .web-right{ width: 92vw; height: 92vw; }
 }
