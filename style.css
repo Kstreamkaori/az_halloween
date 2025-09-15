@@ -108,7 +108,7 @@ body.menu{
   left: max(-40px, -6vw);
   width: min(48vw, 520px);
   height: min(48vw, 520px);
-  background-image: url('assets/web_left.svg');
+  background-image: url('assets/web.svg');
 }
 
 /* 右下クモの巣 */
@@ -117,7 +117,7 @@ body.menu{
   bottom: max(-40px, -6vw);
   width: min(52vw, 560px);
   height: min(52vw, 560px);
-  background-image: url('assets/web_right.svg');
+  background-image: url('assets/web.svg');
 }
 
 /* かぼちゃ（左ボタン上） */
