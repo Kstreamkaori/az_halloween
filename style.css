@@ -54,64 +54,65 @@ body.menu{
 }
 
 /* 共通ボタン */
-/* ===== Buttons (borderなし＋立体感) ===== */
+/* ===== Buttons : 両方オレンジ・枠なし・立体感強め ===== */
 .btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: min(680px, 92vw);
-  min-height: 72px;
-  padding: 18px 24px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-size: clamp(18px, 3.6vw, 28px);
-  font-weight: 700;
-  color: #fff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:min(680px,92vw);
+  min-height:72px;
+  padding:18px 24px;
+  border-radius:14px;
+  text-decoration:none;
+  font-size:clamp(18px,3.6vw,28px);
+  font-weight:700;
+  color:#fff;
+  border:none;                       /* ← 枠ナシ */
 
-  /* ← 背景色はクラスで分ける（ここでは指定しない） */
-  /* border: 2px solid rgba(0,0,0,.12); ← 使わないのでナシ */
-
-  /* 立体感（外側の影＋うっすらハイライト） */
+  /* 立体感：グラデ＋落ち影＋上ハイライト＋下陰影 */
+  background: linear-gradient(180deg,#FFA930 0%, #F08E00 100%);
   box-shadow:
-    0 10px 24px rgba(0,0,0,.18),   /* ふわっと落ち影 */
-    inset 0 1px 0 rgba(255,255,255,.35); /* 上辺ハイライト */
+    0 14px 28px rgba(0,0,0,.25),     /* 落ち影（強め） */
+    inset 0 2px 0 rgba(255,255,255,.35),  /* 天面ハイライト */
+    inset 0 -3px 0 rgba(0,0,0,.15);       /* 下面の陰影 */
 
   transition: transform .08s ease, box-shadow .14s ease, filter .12s ease;
 }
 .btn:hover{
-  filter: brightness(1.03);
+  filter: brightness(1.04);
   box-shadow:
-    0 12px 28px rgba(0,0,0,.22),
-    inset 0 1px 0 rgba(255,255,255,.45);
+    0 18px 34px rgba(0,0,0,.28),
+    inset 0 2px 0 rgba(255,255,255,.42),
+    inset 0 -3px 0 rgba(0,0,0,.16);
 }
 .btn:active{
   transform: translateY(1px);
   box-shadow:
-    0 8px 18px rgba(0,0,0,.18),
-    inset 0 1px 0 rgba(255,255,255,.32);
+    0 10px 20px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.28),
+    inset 0 -2px 0 rgba(0,0,0,.18);
 }
-/* キーボード操作時のフォーカス見やすく（枠線は影で表現） */
 .btn:focus-visible{
-  outline: none;
+  outline:none;
   box-shadow:
     0 0 0 3px rgba(255,255,255,.55),
     0 0 0 6px rgba(0,0,0,.18),
-    0 12px 28px rgba(0,0,0,.22),
-    inset 0 1px 0 rgba(255,255,255,.45);
+    0 18px 34px rgba(0,0,0,.28),
+    inset 0 2px 0 rgba(255,255,255,.42),
+    inset 0 -3px 0 rgba(0,0,0,.16);
 }
 
 /* サブテキスト（かっこ内） */
 .btn .sub{
-  font-weight: 400;
-  font-size: .7em;
-  margin-left: .5em;
-  color: rgba(0,0,0,.55);
+  font-weight:400;
+  font-size:.7em;
+  margin-left:.5em;
+  color:rgba(0,0,0,.55);
 }
 
-/* 色バリエーション（背景だけ持たせる） */
-.btn-orange{ background: #F29B00; } /* いまのオレンジ */
-.btn-purple{ background: #7A3AF9; } /* いまのパープル */
-
+/* 色クラス：両方オレンジに統一（背景だけ指定） */
+.btn-orange{ background: linear-gradient(180deg,#FFA930 0%, #F08E00 100%); }
+.btn-purple{ background: linear-gradient(180deg,#FFA930 0%, #F08E00 100%); }
 
 
 /* ===== Decorations (背景画像) =====
