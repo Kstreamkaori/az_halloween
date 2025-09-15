@@ -53,6 +53,7 @@ body.menu{
   justify-items: center;
 }
 
+/* 共通ボタンを白に */
 .btn{
   display: inline-flex;
   align-items: center;
@@ -64,25 +65,27 @@ body.menu{
   text-decoration: none;
   font-size: clamp(18px, 3.6vw, 28px);
   font-weight: 700;
-  color: #fff;
-  box-shadow: var(--btn-shadow);
-  transition: transform .06s ease, box-shadow .15s ease, filter .15s ease;
-  background: #888;
+  color: #333;                    /* 文字は濃いグレー */
+  background: #fff;               /* 白ボタン！ */
+  border: 2px solid rgba(0,0,0,.12);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  transition: transform .06s ease, box-shadow .12s ease, filter .12s ease;
 }
+.btn:hover  { filter: brightness(0.98); box-shadow: 0 10px 22px rgba(0,0,0,.14); }
+.btn:active { transform: translateY(1px); }
 
+/* サブテキストは少し薄く */
 .btn .sub{
   font-weight: 400;
   font-size: .7em;
   margin-left: .5em;
-  color: rgba(255,255,255,.9);
+  color: rgba(0,0,0,.55);
 }
 
-.btn-purple{ background: var(--purple); }
-.btn-orange{ background: var(--orange); color: #402a00; }
-.btn-orange .sub{ color: rgba(64,42,0,.85); }
+/* 色付きクラスは“縁取り色”だけ残す（背景は白のまま） */
+.btn-purple{ border-color: #7A3AF9; }
+.btn-orange{ border-color: #F29B00; }
 
-.btn:active { transform: translateY(1px); }
-.btn:hover  { filter: brightness(1.03); box-shadow: 0 10px 22px rgba(0,0,0,.22); }
 
 /* ===== Decorations (背景画像) =====
    画像ファイルを /assets に置けば自動で出ます。
