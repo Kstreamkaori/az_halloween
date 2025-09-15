@@ -183,23 +183,24 @@ body.menu{
   opacity: 0.2;   /* 数字を小さくするほど薄くなる（0.0〜1.0） */
 }
 
-/* コウモリ（左ボタン上） */
+/* コウモリ（左） */
 .bat{
-  top: clamp(90px, 14vh, 140px);
+  top: clamp(180px, 28vh, 240px);   /* ← 今より下げる */
   left: clamp(28px, 8vw, 90px);
-  width: min(30vw, 220px);   /* ← 大きさをアップ */
-  height: min(30vw, 220px);
+  width: min(26vw, 200px);          /* 少し大きめ */
+  height: min(26vw, 200px);
   background-image: url('assets/bat_3.png');
 }
 
-/* ドクロ（右ボタン上） */
+/* ドクロ（右） */
 .skull{
-  top: clamp(90px, 14vh, 170px);
+  top: clamp(180px, 28vh, 240px);   /* ← コウモリと揃えて下げる */
   right: clamp(28px, 8vw, 90px);
-  width: min(24vw, 190px);   /* ← 少し大きく */
-  height: min(24vw, 190px);
+  width: min(22vw, 168px);          /* コウモリに対してバランス調整 */
+  height: min(22vw, 168px);
   background-image: url('assets/skull.png');
 }
+
 
 
 /* ===== Responsive 微調整 ===== */
