@@ -125,13 +125,13 @@ body.menu{
   opacity: 0.2;   /* 数字を小さくするほど薄くなる（0.0〜1.0） */
 }
 
-/* かぼちゃ（左ボタン上） */
-.pumpkin{
+/* コウモリ（左ボタン上） */
+.bat{
   top: clamp(90px, 14vh, 140px);
   left: clamp(28px, 8vw, 120px);
   width: min(18vw, 140px);
   height: min(18vw, 140px);
-  background-image: url('assets/pumpkin.png');
+  background-image: url('assets/bat_2.png');
 }
 
 /* ドクロ（右ボタン上） */
