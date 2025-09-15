@@ -10,7 +10,7 @@ const data = [
   { word: "a",      image: "assets/a.png" },
   { word: "black",  image: "assets/black.png" },
   { word: "cat",    image: "assets/cat.png" },
-  { word: "passes", image: "assets/passes.png", chunks: ["pa","ss","es"] },
+  { word: "passes", image: "assets/passes.png", chunks: ["pa","ss","e","s"] },
   { word: "bats",   image: "assets/bats.png" },
   { word: "zap",    image: "assets/zap.png" },
   { word: "up",     image: "assets/up.png" },
