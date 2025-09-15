@@ -48,13 +48,20 @@ body.menu{
 }
 
 /* ボタン全体のコンテナ */
-.menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 260px;   /* ★ここを増やすと全体が下に下がる */
-  gap: 28px;           /* ★ボタン同士の間隔（スマホでしっかり隙間を作る） */
+/* --- スマホでボタンをしっかり離し、全体も下げる --- */
+@media (max-width: 768px){
+  #menu{ 
+    margin-top: 64px;          /* ボタン全体を下へ */
+  }
+  #menu .btn{ 
+    display: block; 
+    margin: 0;                 /* まず0に固定（衝突防止） */
+  }
+  #menu .btn + .btn{ 
+    margin-top: 28px;          /* 2つ目以降だけ上に28pxの余白 */
+  }
 }
+
 
 /* ボタン共通デザイン */
 .btn {
