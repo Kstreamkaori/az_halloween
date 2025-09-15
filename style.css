@@ -40,13 +40,15 @@ body.menu{
     0 0 20px rgba(255,255,255,.18);
 }
 
-.lead{
-  margin: 0 0 40px; 
-  font-size: clamp(20px, 3.8vw, 30px);  /* ← ひと回り大きく */
-  color: #f8f4ff;
-  opacity: .95;
-  letter-spacing: 0.03em;
+/* ===== 説明文（アプリをえらんでね） ===== */
+.lead {
+  margin: 40px 0 60px;         /* 上に40px、下に60pxで下げる */
+  font-size: clamp(20px, 4vw, 28px);  /* ひと回り大きく */
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.95;
 }
+
 
 /* ボタン全体のコンテナ */
 /* --- スマホでボタンをしっかり離し、全体も下げる --- */
