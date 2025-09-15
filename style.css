@@ -31,6 +31,7 @@ body.menu{
 
 .title{
   margin: 24px 0 8px;
+  font-family: 'Creepster', cursive;
   font-size: clamp(32px, 5vw, 56px);
   color: #fff;
   letter-spacing: .02em;
