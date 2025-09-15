@@ -108,7 +108,7 @@ body.menu{
   left: max(-40px, -6vw);
   width: min(48vw, 520px);
   height: min(48vw, 520px);
-  background-image: url('assets/spider_web_left.svg');
+  background-image: url('assets/web_left.svg');
 }
 
 /* 右下クモの巣 */
@@ -117,7 +117,7 @@ body.menu{
   bottom: max(-40px, -6vw);
   width: min(52vw, 560px);
   height: min(52vw, 560px);
-  background-image: url('assets/spider_web_right.svg');
+  background-image: url('assets/web_right.svg');
 }
 
 /* かぼちゃ（左ボタン上） */
@@ -135,7 +135,7 @@ body.menu{
   right: clamp(28px, 8vw, 120px);
   width: min(20vw, 160px);
   height: min(20vw, 160px);
-  background-image: url('assets/skull_hat.png');
+  background-image: url('assets/skull.png');
 }
 
 /* ===== Responsive 微調整 ===== */
