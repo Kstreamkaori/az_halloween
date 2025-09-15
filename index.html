@@ -2,96 +2,33 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Halloween Apps Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
-  <style>
-    /* ---- Menu page only (inline) ---- */
-    :root{
-      --bg:#FFE5B4;           /* やさしいオレンジ */
-      --purple:#7C3AED;       /* ボタン紫 */
-      --purple-press:#6A28D6;
-      --orange:#F59E0B;       /* ボタンオレンジ */
-      --orange-press:#D88407;
-      --text:#333;
-    }
-    *{box-sizing:border-box}
-    html,body{
-      height:100%;
-      margin:0;
-      font-family:'Andika', sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-    .wrap{
-      min-height:100%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:28px;
-      padding:32px 20px;
-      text-align:center;
-    }
-    h1{ margin:0 0 6px; font-size:36px; }
-    p.lead{ margin:0 0 10px; font-size:18px; opacity:.9; }
-
-    .menu{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      width:min(720px, 94vw);
-    }
-    a.card{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:14px;
-      padding:20px 16px;
-      text-decoration:none;
-      color:#fff;
-      font-size:20px;
-      box-shadow:0 6px 16px rgba(0,0,0,.12);
-      transition:transform .08s ease, filter .08s ease;
-    }
-    a.card:hover{ transform:translateY(-2px); filter:brightness(1.02); }
-    a.card:active{ transform:translateY(0); filter:brightness(.96); }
-
-    /* 色バリエーション */
-    a.card.purple{ background:var(--purple); }
-    a.card.purple:active{ background:var(--purple-press); }
-    a.card.orange{ background:var(--orange); }
-    a.card.orange:active{ background:var(--orange-press); }
-
-    /* 説明テキスト小さめに */
-    .sub{ display:block; font-size:13px; opacity:.9; margin-top:6px; }
-
-    /* モバイル縦並び */
-    @media (max-width: 640px){
-      h1{ font-size:30px; }
-      .menu{ grid-template-columns:1fr; gap:14px; }
-      a.card{ font-size:18px; padding:18px 14px; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Let's Read! – Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <main class="wrap">
-    <h1>Let's Read! 🎃</h1>
+<body class="menu">
+
+  <!-- デコ（背景にのせる。画像が無ければ何も出ない＝壊れない） -->
+  <div class="deco web-left" aria-hidden="true"></div>
+  <div class="deco web-right" aria-hidden="true"></div>
+  <div class="deco pumpkin" aria-hidden="true"></div>
+  <div class="deco skull" aria-hidden="true"></div>
+
+  <main class="container">
+    <h1 class="title">Happy Halloween</h1>
     <p class="lead">やりたいアプリをえらんでね</p>
 
-    <div class="menu">
-      <!-- 単語練習 -->
-      <a class="card purple" href="pronunciation/index.html">
-        単語れんしゅう
-        <span class="sub">（音声＋ルビつき）</span>
+    <nav class="menu-buttons">
+      <a class="btn btn-purple" href="pronunciation/index.html">
+        単語れんしゅう <span class="sub">(音声＋ルビつき)</span>
       </a>
 
-      <!-- ストーリー練習 -->
-      <a class="card orange" href="story_practice/index.html">
-        ストーリーれんしゅう
-        <span class="sub">（イラストつき）</span>
+      <a class="btn btn-orange" href="story_practice/index.html">
+        ストーリーれんしゅう <span class="sub">(イラストつき)</span>
       </a>
-    </div>
+    </nav>
   </main>
+
 </body>
 </html>
