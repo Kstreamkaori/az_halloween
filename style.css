@@ -153,14 +153,14 @@ body.menu{
   opacity: 0.2;   /* 数字を小さくするほど薄くなる（0.0〜1.0） */
 }
 
-/* コウモリ（左ボタン上） */
 .bat{
   top: clamp(90px, 14vh, 140px);
   left: clamp(28px, 8vw, 90px);
-  width: min(18vw, 140px);
-  height: min(18vw, 140px);
+  width: min(23.5vw, 182px);   /* ← 18vw → 23.5vw、140px → 182px */
+  height: min(23.5vw, 182px);  /* ← 同じく3割増し */
   background-image: url('assets/bat_3.png');
 }
+
 
 /* ドクロ（右ボタン上） */
 .skull{
