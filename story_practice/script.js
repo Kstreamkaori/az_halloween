@@ -18,7 +18,7 @@ const data = [
   { word: "a",      image: "assets/a.png" },
   { word: "pot",    image: "assets/pot.png" },
   { word: "Sam",    image: "assets/sam.png" },
-  { word: "runs",   image: "assets/run.png" },
+  { word: "runs",   image: "assets/runs.png" },
   { word: "Sam",    image: "assets/sam.png" },
   { word: "got",    image: "assets/get.png" },
   { word: "a",      image: "assets/a.png" },
