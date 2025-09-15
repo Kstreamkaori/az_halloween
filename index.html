@@ -34,6 +34,24 @@
 </nav>
 
   </main>
+<script>
+  // ホバー中だけラベルを「やってみる！」に切り替え
+  document.querySelectorAll('.btn[data-hover]').forEach(btn => {
+    const label = btn.querySelector('.label');
+    const defaultText = btn.dataset.default;
+    const hoverText   = btn.dataset.hover;
+
+    // マウス/タッチ両対応
+    const enter = () => { label.textContent = hoverText; };
+    const leave = () => { label.textContent = defaultText; };
+
+    btn.addEventListener('mouseenter', enter);
+    btn.addEventListener('mouseleave', leave);
+    btn.addEventListener('touchstart', enter, {passive:true});
+    btn.addEventListener('touchend',   leave);
+    btn.addEventListener('touchcancel',leave);
+  });
+</script>
 
 </body>
 </html>
