@@ -230,3 +230,18 @@ body.menu{
     margin-top: clamp(20px, 5vh, 40px);
   }
 }
+/* === スマホだけでコウモリ＆ドクロを少し上げて、大きくする上書き === */
+@media (max-width: 480px){
+  .bat{
+    top: clamp(135px, 21vh, 180px);   /* ← ちょい上に戻す */
+    left: clamp(24px, 7vw, 90px);
+    width:  min(30vw, 220px);         /* ← ひと回り大きく */
+    height: min(30vw, 220px);
+  }
+  .skull{
+    top: clamp(135px, 21vh, 180px);   /* ← コウモリと揃える */
+    right: clamp(24px, 7vw, 90px);
+    width:  min(26vw, 200px);         /* ← こちらも少し大きく */
+    height: min(26vw, 200px);
+  }
+}
