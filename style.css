@@ -131,7 +131,7 @@ body.menu{
   left: clamp(28px, 8vw, 90px);
   width: min(18vw, 140px);
   height: min(18vw, 140px);
-  background-image: url('assets/bat_2.png');
+  background-image: url('assets/bat_3.png');
 }
 
 /* ドクロ（右ボタン上） */
