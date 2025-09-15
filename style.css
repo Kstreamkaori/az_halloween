@@ -53,7 +53,7 @@ body.menu{
   justify-items: center;
 }
 
-/* 共通ボタンを白に */
+/* 共通ボタン */
 .btn{
   display: inline-flex;
   align-items: center;
@@ -65,8 +65,8 @@ body.menu{
   text-decoration: none;
   font-size: clamp(18px, 3.6vw, 28px);
   font-weight: 700;
-  color: #333;                    /* 文字は濃いグレー */
-  background: #fff;               /* 白ボタン！ */
+  color: #fff;                    /* 文字は白 */
+  background: #F29B00;               /* オレンジボタン！ */
   border: 2px solid rgba(0,0,0,.12);
   box-shadow: 0 8px 18px rgba(0,0,0,.08);
   transition: transform .06s ease, box-shadow .12s ease, filter .12s ease;
