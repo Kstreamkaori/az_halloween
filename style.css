@@ -63,25 +63,56 @@ body.menu{
 }
 
 
-/* ボタン共通デザイン */
-button {
-  display: block;
-  width: 80%;
-  margin: 20px auto;
-  padding: 15px;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(to bottom, #ffa500, #ff7f00);
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+/* === ボタン共通（<a class="btn"> 用）=== */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(680px, 92vw);
+  min-height: 72px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: clamp(18px, 3.6vw, 28px);
+  font-weight: 700;
+  color: #fff;
+  background: #F29B00;                   /* 基本色（上書きされる） */
+  box-shadow: 0 10px 24px rgba(0,0,0,.22),
+              inset 0 2px 0 rgba(255,255,255,.35),
+              inset 0 -3px 0 rgba(0,0,0,.18);
+  transition: transform .06s ease, box-shadow .12s ease, filter .12s ease;
 }
 
-/* 1つめのボタンと2つめのボタンの間隔をしっかり確保 */
-button:first-of-type {
-  margin-bottom: 40px; /* ←ここでしっかり間をあける */
+/* ボタン間の“しっかりした”間隔 */
+#btn-area .btn + .btn{ margin-top: 40px; }      /* デフォルト */
+@media (max-width: 560px){
+  #btn-area .btn + .btn{ margin-top: 48px; }    /* スマホはさらに広め */
+}
+
+/* 色（両方オレンジに統一） */
+.btn-orange{ background: linear-gradient(180deg,#FFA930 0%, #F08E00 100%); }
+.btn-purple{ background: linear-gradient(180deg,#FFA930 0%, #F08E00 100%); }
+
+/* ホバー/アクティブ */
+.btn:hover  { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.28); }
+.btn:active { transform: translateY(1px);  box-shadow: 0 8px 18px rgba(0,0,0,.24); }
+
+.btn:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.55),
+    0 0 0 6px rgba(0,0,0,.18),
+    0 18px 34px rgba(0,0,0,.28),
+    inset 0 2px 0 rgba(255,255,255,.42),
+    inset 0 -3px 0 rgba(0,0,0,.16);
+}
+
+/* サブテキスト */
+.btn .sub{
+  font-weight: 400;
+  font-size: .7em;
+  margin-left: .5em;
+  color: rgba(0,0,0,.55);
 }
 
 .btn:hover { 
