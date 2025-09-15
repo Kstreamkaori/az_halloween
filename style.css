@@ -180,3 +180,22 @@ body.menu{
   .web-left{ width: 88vw; height: 88vw; }
   .web-right{ width: 92vw; height: 92vw; }
 }
+/* === ボタンの縦位置をデバイス別に調整 === */
+/* 共通（タブレット想定の中間値） */
+#btn-area{
+  margin-top: clamp(40px, 8vh, 72px);
+}
+
+/* スマホ：ボタンをしっかり下げる（重なり回避） */
+@media (max-width: 480px){
+  #btn-area{
+    margin-top: clamp(110px, 20vh, 160px);
+  }
+}
+
+/* デスクトップ：少し上に寄せる（離れすぎ対策） */
+@media (min-width: 1024px){
+  #btn-area{
+    margin-top: clamp(20px, 5vh, 40px);
+  }
+}
