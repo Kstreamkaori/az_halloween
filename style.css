@@ -54,6 +54,7 @@ body.menu{
 }
 
 /* 共通ボタン */
+/* ===== Buttons (borderなし＋立体感) ===== */
 .btn{
   display: inline-flex;
   align-items: center;
@@ -65,16 +66,41 @@ body.menu{
   text-decoration: none;
   font-size: clamp(18px, 3.6vw, 28px);
   font-weight: 700;
-  color: #fff;                    /* 文字は白 */
-  background: #F29B00;               /* オレンジボタン！ */
-  border: 2px solid rgba(0,0,0,.12);
-  box-shadow: 0 8px 18px rgba(0,0,0,.08);
-  transition: transform .06s ease, box-shadow .12s ease, filter .12s ease;
-}
-.btn:hover  { filter: brightness(0.98); box-shadow: 0 10px 22px rgba(0,0,0,.14); }
-.btn:active { transform: translateY(1px); }
+  color: #fff;
 
-/* サブテキストは少し薄く */
+  /* ← 背景色はクラスで分ける（ここでは指定しない） */
+  /* border: 2px solid rgba(0,0,0,.12); ← 使わないのでナシ */
+
+  /* 立体感（外側の影＋うっすらハイライト） */
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.18),   /* ふわっと落ち影 */
+    inset 0 1px 0 rgba(255,255,255,.35); /* 上辺ハイライト */
+
+  transition: transform .08s ease, box-shadow .14s ease, filter .12s ease;
+}
+.btn:hover{
+  filter: brightness(1.03);
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.45);
+}
+.btn:active{
+  transform: translateY(1px);
+  box-shadow:
+    0 8px 18px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.32);
+}
+/* キーボード操作時のフォーカス見やすく（枠線は影で表現） */
+.btn:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.55),
+    0 0 0 6px rgba(0,0,0,.18),
+    0 12px 28px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.45);
+}
+
+/* サブテキスト（かっこ内） */
 .btn .sub{
   font-weight: 400;
   font-size: .7em;
@@ -82,9 +108,10 @@ body.menu{
   color: rgba(0,0,0,.55);
 }
 
-/* 色付きクラスは“縁取り色”だけ残す（背景は白のまま） */
-.btn-purple{ border-color: #7A3AF9; }
-.btn-orange{ border-color: #F29B00; }
+/* 色バリエーション（背景だけ持たせる） */
+.btn-orange{ background: #F29B00; } /* いまのオレンジ */
+.btn-purple{ background: #7A3AF9; } /* いまのパープル */
+
 
 
 /* ===== Decorations (背景画像) =====
