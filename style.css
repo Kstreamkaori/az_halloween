@@ -30,21 +30,22 @@ body.menu{
 }
 
 .title{
-  margin: 24px 0 8px;
+  margin: 24px 0 12px;
   font-family: 'Creepster', cursive;
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(40px, 6vw, 68px);  /* ← 全体的にひと回り大きく */
   color: #fff;
   letter-spacing: .02em;
   text-shadow:
-    0 2px 0 rgba(0,0,0,.15),
-    0 0 18px rgba(255,255,255,.15);
+    0 3px 0 rgba(0,0,0,.2),
+    0 0 20px rgba(255,255,255,.18);
 }
 
 .lead{
-  margin: 0 0 32px;
-  font-size: clamp(16px, 3.3vw, 22px);
+  margin: 0 0 40px; 
+  font-size: clamp(20px, 3.8vw, 30px);  /* ← ひと回り大きく */
   color: #f8f4ff;
-  opacity: .9;
+  opacity: .95;
+  letter-spacing: 0.03em;
 }
 
 /* ボタン全体のコンテナ */
