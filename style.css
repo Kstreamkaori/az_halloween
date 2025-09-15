@@ -247,3 +247,45 @@ body.menu{
     height: min(26vw, 200px);
   }
 }
+/* ===== iPad / タブレット向け（768〜1024px） ===== */
+@media (min-width: 768px) and (max-width: 1024px){
+  /* ボタンを少し下げて、イラストとかぶらないように */
+  #btn-area{
+    margin-top: 140px;     /* ← 被りが残る時は 160px まで増やしてOK */
+  }
+
+  /* 左のコウモリ：少し下げ＆少し小さく */
+  .bat{
+    top: 190px;            /* ← 下げ量。もっと下げたい時は 200〜210px */
+    left: clamp(24px, 6vw, 80px);
+    width: min(20vw, 180px);
+    height: min(20vw, 180px);
+  }
+
+  /* 右のドクロ：同じく下げ＆少し小さく */
+  .skull{
+    top: 190px;
+    right: clamp(24px, 6vw, 80px);
+    width: min(20vw, 180px);
+    height: min(20vw, 180px);
+  }
+}
+
+/* ===== PC向け（1025px〜）イラストを少し寄せる＆ボタンは気持ち下げ ===== */
+@media (min-width: 1025px){
+  #btn-area{
+    margin-top: 80px;      /* ← 離れすぎなら 60px、近すぎなら 100px */
+  }
+  .bat{
+    top: 150px;            /* ← もう少し上なら 140px、下なら 160px */
+    left: clamp(24px, 6vw, 80px);
+    width: min(18vw, 200px);
+    height: min(18vw, 200px);
+  }
+  .skull{
+    top: 150px;
+    right: clamp(24px, 6vw, 80px);
+    width: min(18vw, 200px);
+    height: min(18vw, 200px);
+  }
+}
