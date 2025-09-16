@@ -202,6 +202,22 @@ body.menu{
   height: min(22vw, 168px);
   background-image: url('assets/skull.png');
 }
+/* ===== タブレット (iPad) & PC 共通: ボタン下げる ===== */
+@media (min-width: 768px){
+  #btn-area{
+    margin-top: clamp(120px, 22vh, 200px); /* ← 今よりしっかり下げる */
+  }
+}
+
+/* ===== PC専用: イラストをさらに内側に寄せる ===== */
+@media (min-width: 1024px){
+  .bat{
+    left: 15%;  /* ← 18% → 15% にして中央寄り */
+  }
+  .skull{
+    right: 15%; /* ← 同じく 15% に寄せる */
+  }
+}
 
 
 
@@ -303,5 +319,21 @@ body.menu{
     right: 18%;                       /* ← 中央寄りに配置 */
     width: min(20vw, 180px);
     height: min(20vw, 180px);
+  }
+}
+/* ===== タブレット (iPad) & PC 共通: ボタン下げる ===== */
+@media (min-width: 768px){
+  #btn-area{
+    margin-top: clamp(120px, 22vh, 200px); /* ← 今よりしっかり下げる */
+  }
+}
+
+/* ===== PC専用: イラストをさらに内側に寄せる ===== */
+@media (min-width: 1024px){
+  .bat{
+    left: 15%;  /* ← 18% → 15% にして中央寄り */
+  }
+  .skull{
+    right: 15%; /* ← 同じく 15% に寄せる */
   }
 }
