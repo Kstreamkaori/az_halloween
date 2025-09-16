@@ -289,3 +289,19 @@ body.menu{
     height: min(18vw, 200px);
   }
 }
+/* ===== タブレット（iPad） & PC のイラスト位置調整 ===== */
+@media (min-width: 768px){   /* iPad以上のサイズに適用 */
+  .bat{
+    top: clamp(120px, 16vh, 160px);   /* 少し下げてバランスをとる */
+    left: 18%;                        /* ← 中央寄りに配置 */
+    width: min(20vw, 180px);
+    height: min(20vw, 180px);
+  }
+
+  .skull{
+    top: clamp(120px, 16vh, 160px);   /* bat と高さを揃える */
+    right: 18%;                       /* ← 中央寄りに配置 */
+    width: min(20vw, 180px);
+    height: min(20vw, 180px);
+  }
+}
